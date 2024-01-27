@@ -1,0 +1,101 @@
+
+*{
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height:100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.container{
+    height:100vh;
+    max-width:1200px;
+    /*max width means ek container h jiska 
+    maximum width 1200px ka h agar elements 
+    bahut jyda h tb wo container ke bahar chlaa jayega*/
+    margin:0 auto;
+    padding: 20px;
+}
+.container h1{
+    margin:20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    
+}
+/*To convert gallery container into flex we write 
+display flex. gallery container me
+saari images aise hi random order me rkhi jayengi
+to set them in a tabular form we use flex.*/
+.gallery{
+    display: flex;
+    flex-wrap: wrap;/*agar flex wrap ko wrap nhi 
+    karenge then sara pics by default horizontal axis
+    ke along sajj jayega*/
+    justify-content:space-between;
+}/* basically hmne gallery container ko 
+flex me convert kr diya and ab hm flex ke andar
+card block bnaa rhe h jiske andar hm images ko fit
+ karenge so card is the parent element for 
+ images and text.*/
+.card
+{
+    width:32%;
+    position:relative;
+    margin-bottom: 20px;
+    border-radius:10px;
+    overflow:hidden;
+}
+.card img{
+    width:100%; /*width kiska 100 percent..
+    width 100 % of its parent element which is 
+    card*/
+    height:100%;
+    filter:grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+.card:hover{
+    transform:scale(1.03);
+    transition:0.5s;
+    filter:drop-shadow(0 0 10px #333);}
+    
+
+
+.card:hover img{
+    filter:grayscale(0%);}
+
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    padding:25px;
+    width:100%;
+    height:20%;
+    font-size:16px;
+    font-weight:500;
+    color:white;
+    opacity:0%;
+    border-radius: 0 0 10px 10px;
+    background: Linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba (255,255,255,255));
+    transition: 0.3s;
+
+
+}
+.card:hover figcaption{
+    opacity:1;
+    transform: scale (1.03);
+
+}
+
+
+
+
+    
+
+
+
+
+
